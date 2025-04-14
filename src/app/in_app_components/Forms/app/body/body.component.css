@@ -1,0 +1,14 @@
+#side-bar{
+    /* height: 130vh; */
+    width: 15%;
+    background-color: black;
+    border: 2px solid gray;
+    float: left;
+}
+#content{
+    /* height: 130vh; */
+    width: 84%;
+    /* background-color: yellow; */
+    border: 2px solid black;
+    float: left;
+}

@@ -1,0 +1,61 @@
+<div id="container-entire">
+    <!-- <h1>STUDENT REGISTRATION</h1> -->
+    <form action="" #registrationForm="ngForm" (ngSubmit)="sendFormData(registrationForm)">
+        <h1>STUDENT REGISTRATION</h1>
+        <div ngModelGroup #personalData="ngModelGroup">
+            <p *ngIf="!registrationForm.valid">Please fill the all details</p>
+            <!--Name-->
+            <label for="fName">Name<sup>*</sup>:</label><br>
+            <!--First Name-->
+            <input type="text" name="firstName" id="fName" placeholder="Enter First Name" ngModel
+                #surname="ngModel" required>
+            <!--Last Name-->
+            <input type="text" name="lastName" id="lName" placeholder="Enter Last Name" ngModel #name="ngModel" required=""><br>
+            @if (surname.invalid&&surname.touched) {
+                <p>First Name required</p>
+            }
+            @if (name.invalid&&name.touched) {
+                <p>Last Name required</p>
+            }
+            <!--Gender-->
+            <label for="genderInput">Gender<sup>*</sup>:</label><br>
+            <ul>
+                <li><input type="radio" id="genderInput"  name="gender" value="
+                    Male">Male</li>
+                <li><input type="radio" name="gender" id="genderInput" value="Female">Female</li>
+                <li><input type="radio" name="gender" id="genderInput" value="Others">Others</li>
+            </ul>
+            <!--Date of Birth-->
+            <label for="DOB">Date of Birth<sup>*</sup>:</label><br>
+            <input type="date" name="dateOfBirth" id="DOB" required ngModel #dob="ngModel"><br>
+            <p *ngIf="dob.invalid&&dob.touched">Date of Birth is required</p>
+            <!--Email-->
+            <label for="Email">Email<sup>*</sup>:</label><br>
+            <input type="email" name="email" id="Email" placeholder="Enter your Email" required ngModel #mail="ngModel"><br>
+            <p *ngIf="mail.touched&& mail.invalid">Email is required</p>
+            <!--Phone Number-->
+            <label for="phone">Phone<sup>*</sup>:</label><br>
+            <input type="number" name="Phone" id="phone" placeholder="Enter your phone number" required ngModel #ph="ngModel"><br>
+            <p *ngIf="ph.invalid&&ph.touched">Phone number is required</p>
+            <!--Create New Password-->
+            <label for="setPassword">Set New Password<sup>*</sup>:</label><br>
+            <input type="password" name="new-password" id="setPassword" placeholder="Enter Password" required ngModel #pass="ngModel"><br>
+            <p *ngIf="pass.touched&& pass.invalid">Please enter the password</p>
+            <!--Re enter the password-->
+            <label for="enterPassword">Re-enter Password<sup>*</sup>:</label><br>
+            <input type="password" name="password" id="enterPassword" placeholder="Re-enter password" required ngModel #rePass="ngModel"><br>
+            <p *ngIf="rePass.touched&& pass.invalid">Please re-enter the password</p>
+
+        </div>
+        <div ngModelGroup #reg="ngModelGroup">
+            <!--Register button-->
+            <button type="submit">Register</button>
+            <div *ngIf="notification" style="background-color: green;color: white;" id="notification">
+                {{notification}}
+            </div>
+            
+        </div>
+    </form>
+    <!-- <img src="/assets/school.jpg" alt="Not found"> -->
+    <!-- <button (click)="sendData(mail)">get data</button> -->
+</div>

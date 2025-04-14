@@ -1,0 +1,15 @@
+<!--Defining all the router links inside navbar-->
+<nav>
+    <ul>
+        <li><a routerLink="/routing/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/routing/users" routerLinkActive="active">Users</a></li>
+        <!--By using Query parameter routing-->
+        <li><select [(ngModel)]="options"
+                (change)="navigate()"><!--when the option is changed both 'options' and naavigate() are triggered-->
+                <option value="">Filter By</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select></li>
+        <li><a routerLink="/routing/completed-tasks" routerLinkActive="active">Completed Tasks</a></li>
+    </ul>
+</nav>

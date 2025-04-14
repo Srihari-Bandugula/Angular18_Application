@@ -1,0 +1,12 @@
+<!--Presenting all the completed tasks (by using child routing)-->
+<h2>Recently completed tasks</h2>
+<ol>
+    <li><a routerLink="/routing/completed-tasks/components" routerLinkActive="active">Components</a></li>
+    <li><a routerLink="/routing/completed-tasks/databinding" routerLinkActive="active">Data Binding</a></li>
+    <li><a routerLink="/routing/completed-tasks/component-communication" routerLinkActive="active">Component Communication</a></li>
+    <li><a routerLink="/routing/completed-tasks/directives" routerLinkActive="active">Directives</a></li>
+</ol>
+
+<!--to redirect to the home page-->
+<button><a routerLink="/routing/home" routerLinkActive="active">Go to Home</a></button>
+<router-outlet></router-outlet>

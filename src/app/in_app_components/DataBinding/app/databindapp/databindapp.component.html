@@ -1,0 +1,30 @@
+<div>
+    <!-- String Interpolation -->
+    <h3>1.STRING INTERPOLATION DATA BINDING</h3>
+    <p>{{title}}</p>
+  
+    <!-- Two-Way Binding -->
+    <h3>2.TWO WAY DATA BINDING</h3>
+    <input type="text" [(ngModel)]="inputText">
+    <p>You typed: {{ inputText }}</p>
+
+    <!-- Event Binding -->
+    <h3>3.EVENT BINDING</h3>
+    <button (click)="increment()" title="Event Binding">Click Me</button>
+    <p>Button Clicked: {{ count }} times</p>
+  
+    <!-- Property Binding -->
+    <h3>4.PROPERTY BINDING</h3>
+    <p>Property binding by using 'src' property:</p>
+    <img [src]="path" alt="Angular Logo" width="150">
+    <br>
+    <!-- Class Binding -->
+    <p>Property binding by using 'class' property:</p>
+    <button [class.active]="isActive" [disabled]="isDisabled">Class Binding Button</button>
+    <!-- Style Binding -->
+    <p>Property binding by using 'style' property:</p>
+    <p [style.color]="isActive ? 'green' : 'red'" [style.fontSize.px]="fontSize">
+      This is a dynamically styled paragraph (style binding).
+    </p>
+  
+  </div>

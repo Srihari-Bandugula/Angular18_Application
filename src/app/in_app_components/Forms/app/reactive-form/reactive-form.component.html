@@ -1,0 +1,107 @@
+<div id="container-entire">
+    <!-- <h1>PLACEMENTS ACTIVITY</h1> -->
+    <form  (ngSubmit)="sendFormData()">
+        <h1>PLACEMENT ACTIVITY</h1>
+        <div [formGroup]="student">
+            <p *ngIf="!student.valid">Please fill the all details</p>
+            <!--Name-->
+            <label for="Name">Name<sup>*</sup>:</label><br>
+            <!--First Name-->
+            <input type="text" name="firstName" id="Name" placeholder="Enter First Name" formControlName="surname">
+            <!--Last Name-->
+            <input type="text" name="lastName" id="Name" class="lName" placeholder="Enter Last Name"
+                formControlName="name"><br>
+            @if (student.get('surname')?.invalid && student.get('surname')?.touched) {
+            <p>First Name required</p>
+            }
+            @if (student.get('name')?.invalid && student.get('name')?.touched) {
+            <p>Last Name required</p>
+            }
+            <!--Gender-->
+            <label for="genderInput">Gender:</label><br>
+            <ul>
+                <li><input type="radio" id="genderInput" name="gender" value="
+                    Male">Male</li>
+                <li><input type="radio" name="gender" id="genderInput" value="Female">Female</li>
+                <li><input type="radio" name="gender" id="genderInput" value="Others">Others</li>
+            </ul>
+            <!--Date of Birth-->
+            <label for="DOB">Date of Birth<sup>*</sup>:</label><br>
+            <input type="date" name="dateOfBirth" id="DOB" formControlName="dob"><br>
+            <p *ngIf="student.get('dob')?.invalid&&student.get('dob')?.touched">Date of Birth is required</p>
+            <!--Email-->
+            <label for="Email">Email<sup>*</sup>:</label><br>
+            <input type="email" name="email" id="Email" placeholder="Enter your Email" formControlName="mail"><br>
+            <!-- <p *ngIf="student.controls.mail.touched&&student.controls.mail.invalid">Email is required</p> -->
+            @if (student.get('mail')?.touched&&student.get('mail')?.invalid) {
+            <p>Email is required</p>
+            }
+            <!--Phone Number-->
+            <label for="phone">Phone<sup>*</sup>:</label><br>
+            <input type="text" name="Phone" id="phone" placeholder="Enter your phone number" formControlName="ph"><br>
+            @if (student.get('ph')?.touched ) {
+
+            @if(student.get('ph')?.invalid && (student.get('ph')?.value?.length ||0)<1){ <p>Phone number is required
+                </p>
+                }
+                @else if (student.get('ph')?.invalid && (student.get('ph')?.value?.length ||0)!=10) {
+                <p>Phone number must contain 10 digits</p>
+                }
+                }
+
+                <!--University Roll Number-->
+                <label for="roll">University Roll Number<sup>*</sup>:</label><br>
+                <input type="text" name="roll-number" id="roll" placeholder="Enter your Roll Number"
+                    formControlName="rollNumber"><br>
+                <!-- <p *ngIf="student.controls.rollNumber.invalid&& student.controls.rollNumber.touched">Roll number is required</p> -->
+                @if (student.get('rollNumber')?.touched ) {
+
+                @if(student.get('rollNumber')?.invalid && (student.get('rollNumber')?.value?.length ||0)<1){ <p>Roll
+                    number is required</p>
+                    }
+                    @else if (student.get('rollNumber')?.invalid && (student.get('rollNumber')?.value?.length ||0)!=10)
+                    {
+                    <p>Roll number must contain 10 digits</p>
+                    }
+                    }
+
+                    <!--Desired Work Locations-->
+                    <label for="loc">Desired Work Locations</label><br>
+                    <ng-container formArrayName="workLocation"
+                        *ngFor="let control of student.get('workLocation')?.value;let i=index">
+                        <input type="text" name="" id="loc" [formControlName]="i" placeholder="Enter the location"><br>
+                    </ng-container>
+
+
+                    <!--Resume-->
+                    <label for="cv">Resume / Cover Letter<sup>*</sup>:</label><br>
+                    <input type="file" name="Resume" id="cv" placeholder="Select Resume" formControlName="resume"><br>
+                    <p *ngIf="student.get('resume')?.invalid&& student.get('resume')?.touched">Resume is required</p>
+
+                    <!--Password-->
+                    <label for="pwd">Create Password<sup>*</sup>:</label><br>
+                    <input type="password" name="Password" id="pwd" placeholder="Create Password"
+                        formControlName="password"><br>
+                    @if (student.get('password')?.touched ) {
+
+                    @if(student.get('password')?.invalid && (student.get('password')?.value?.length||0)<1){ <p>
+                        Password is required</p>
+                        }
+                        @else if (student.get('password')?.invalid && (student.get('password')?.value?.length ||0)>1) {
+                        <p
+                            title="Password must contain atleat one Uppercase Letter,one number, one special character and lenght of min 8 characters">
+                            Please enter a valid password (hover for more info)</p>
+                        }
+                        }
+                        <!--Save button-->
+                        <button type="submit" [disabled]="student.invalid">Save</button>
+                        <div *ngIf="notification" style="background-color: green;color: white;" id="notification">
+                            {{notification}}
+                        </div>
+
+        </div>
+
+    </form>
+    <!-- <img src="/assets/school.jpg" alt="Not found"> -->
+    <!-- <button (click)="sendData()">get data</button> -->
+</div>

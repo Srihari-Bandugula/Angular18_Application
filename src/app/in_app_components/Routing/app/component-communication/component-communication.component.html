@@ -1,0 +1,29 @@
+<!--Data belonging to Component Communication in Angular-->
+<div>
+    <h1>Component Communication</h1>
+    <h3>Presented by : Abdul Uzair & Bhargav Mallik</h3>
+    <h4>Overview:</h4>
+    <p>**Component Communication** in Angular refers to how different components interact and share data with each
+        other. Since Angular follows a component-based architecture, effective communication between components is
+        essential for building dynamic and modular applications.
+
+        There are several ways to achieve component communication:
+        1. **Parent to Child (`Input`)** – The parent component passes data to a child component using the `Input`
+        decorator. This allows the child component to receive and display dynamic data from the parent.
+        2. **Child to Parent (`Output` and EventEmitter)** – The child component sends data or events back to the parent
+        using the `Output` decorator and the `EventEmitter` class. This enables the parent to react to changes occurring
+        in the child.
+        3. **Sibling Communication (Using a Shared Service)** – When two components that do not have a direct
+        parent-child relationship need to share data, a shared service with a `BehaviorSubject` or `Subject` is used to
+        maintain state and emit updates across components.
+        4. **Parent-Child via ViewChild (`ViewChild`)** – The parent component can directly access and manipulate the
+        child component’s properties and methods using the `ViewChild` decorator. This is useful when the parent needs
+        to control specific child behavior dynamically.
+        5. **Global Communication (Using State Management or a Global Service)** – In larger applications, tools like
+        NgRx, Akita, or a global service with observables help manage complex data flows across multiple components and
+        modules efficiently.
+
+        Effective component communication ensures better reusability, maintainability, and scalability of Angular
+        applications, allowing components to work together seamlessly.
+    </p>
+</div>

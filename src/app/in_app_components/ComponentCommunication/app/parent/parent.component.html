@@ -1,0 +1,20 @@
+<div id="container">
+    <div id="div1">
+        <h3>Parent Component</h3>
+        <p>1. By using Input Decorator</p>
+        <input type="text" placeholder="Enter your name" [(ngModel)]="name">
+        <p>2. By using Output Decorator</p>
+        <input type="text" placeholder="gmail from child" [(ngModel)]="gMail">
+        <p>3. By using Template Ref Variable</p>
+        <input type="text" placeholder="Phone number from child" [(ngModel)]="child.mobile">
+        <p>4. By using ViewChild Decorator</p>
+        <input type="text" placeholder="Gender from Child" [(ngModel)]="mOrF">
+        <p>5.{{personData.purpose}} (from service)</p>
+    </div>
+    <div id="div2">
+        <app-child [name]="name" (childMail)="gMail=$event" #child>
+            5.By using ng-content (from parent Component)
+        </app-child>
+    </div>
+
+</div>

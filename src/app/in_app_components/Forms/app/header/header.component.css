@@ -1,0 +1,18 @@
+
+  ul{
+    display: flex;
+    /* justify-content: center; */
+    gap: 50px;
+    list-style: none
+    ;
+  }
+
+  .mat-button{
+    height: 40px;
+   margin-top: 10px;
+   margin-left: 10px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,28 @@
+#container{
+    height: 72vh;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(156, 203, 203);
+}
+#div1{
+    height: 90%;
+    width: 50%;
+    float: left;
+    background-color: rgb(207, 207, 228);
+    border: 2px solid black;
+    margin-left: 20px;
+    
+}
+#div2{
+    height: 90%;
+    width: 40%;
+    float: right;
+    background-color: rgb(207, 207, 228);
+    border: 2px solid black;
+    margin-right: 20px;
+}
+#div1,#div2{
+    margin-top: 15px;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}

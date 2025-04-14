@@ -1,0 +1,50 @@
+
+<div class="data-container" >
+    <h1>Communication with Back-end Services</h1>
+    <div class="table-header" >
+        <h1>Mobile Manager</h1>
+        <button type="button" (click)="formOpen()" class="add-button">Add Mobile</button>
+    </div>
+    <table *ngIf="mobiles[0]!=null;else err">
+        <tbody>
+        <tr class="row-header">
+            <th>Mobile</th>
+            <th>RAM</th>
+            <th>ROM</th>
+            <th>Price</th>
+            <th colspan="2"></th>
+
+        </tr>
+        <tr *ngFor="let mobile of mobiles;let i=index">
+            <td>{{mobile.name}}</td>
+            <td>{{mobile.RAM}}</td>
+            <td>{{mobile.ROM}}</td>
+            <td>{{mobile.Price}}</td>
+            <td><button type="button"  (click)="formOpen(mobile)" class="form-edit-button">Edit</button></td>
+            <td><button type="button"  (click)="deleteMobile(mobile.id)" class="form-delete-button">Delete</button></td>
+        </tr>
+    </tbody>
+    </table>
+    <div>
+        <h3>{{task}}</h3>
+    </div>
+</div>
+<ng-template #err>
+<p [style]="{color:'red'}">No mobiles present at this moment! Please Add mobiles to View </p>
+</ng-template>
+
+<div class="form-page-container" *ngIf="openForm">
+    <div class="form-container">
+        <h1>{{formHeader}}</h1>
+        <label for="">Mobile Name</label><br>
+        <input type="text" [(ngModel)]="mobileName"><br>
+        <label for="">RAM</label><br>
+        <input type="text" [(ngModel)]="mobileRam"><br>
+        <label for="">ROM</label><br>
+        <input type="text" name="" id="" [(ngModel)]="mobileRom"><br>
+        <label for="">Price</label><br>
+        <input type="text" name="" id="" [(ngModel)]="mobilePrice"><br><br><br>
+        <button type="button"  (click)="formClose('content')" [style]="{backgroundColor:'green'}">{{addOrEdit}}</button><button type="button"  (click)="clearForm()" [style]="{backgroundColor:'orange'}">Clear</button><button type="button"  (click)="formClose()" [style]="{backgroundColor:'red'}">Cancel</button>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+div{
+    height: 95%;
+    width: 100%;
+    background-image: url('/assets/angular-home.webp');
+    background-size: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+h1{
+    font-size: 50px;
+}
+.gradient-heading {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #b5c5d6, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  p{
+    margin-top: 60vh;
+    line-height: 2;
+    color: #e7f4f5;
+  }nav{
+    float: right;
+    margin-right: 50px;
+  }

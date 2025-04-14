@@ -1,0 +1,17 @@
+<div class="data-container">
+    <h2>User Streaming (One JSON)</h2>
+
+<button mat-fab (click)="startStreaming()">Start Streaming</button>
+<button mat-fab (click)="stopStreaming()">Stop Streaming</button>
+
+<p *ngIf="loading"><mat-spinner [diameter]="60"></mat-spinner></p>
+
+<div class="user-container">
+  <ul>
+    <li *ngFor="let user of users">
+      <strong>{{user.id}}.{{ user.name }}</strong> - {{ user.email }}
+    </li>
+  </ul>
+</div>
+
+</div>

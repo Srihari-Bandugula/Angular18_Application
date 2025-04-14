@@ -1,0 +1,10 @@
+<h3>Child Component</h3>
+<p>1. By using Input Decorator</p>
+<input type="text" placeholder="Name from Parent" value="{{name}}">
+<p>2. By using Output Decorator</p>
+<input type="text" placeholder="Enter your gmail" [(ngModel)]="gMail"><button (click)="sendMail()">send</button>
+<p>3. By using Template Ref Variable</p>
+<input type="text" placeholder="Enter your Mobile number" [(ngModel)]="mobile">
+<p>4. By using ViewChild Decorator</p>
+<input type="text" placeholder="Enter your gender" [(ngModel)]="gender">
+<p><ng-content></ng-content></p>

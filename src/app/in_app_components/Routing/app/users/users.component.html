@@ -1,0 +1,15 @@
+<!--To display all the users present in the teamMembers array-->
+<div id="users-body">
+    <ng-container *ngFor="let member of teamMembers;index as i" >       <!--to iterate through the teamMembers-->
+        <div id="data-container" (click)="person(teamMembers[i].id)">
+            <img [src]="teamMembers[i].image" alt="img not found">
+            <h2>{{teamMembers[i].name}}</h2>
+            <ul>
+                <li>{{teamMembers[i].age}}</li>
+                <li>{{teamMembers[i].gender}}</li>
+                <li>{{teamMembers[i].designation}}</li>
+                <li>{{teamMembers[i].location}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>

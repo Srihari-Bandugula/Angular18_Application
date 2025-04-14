@@ -1,0 +1,16 @@
+<div #viewElement>
+  <h3>Child Component</h3>
+  <p>Input Data: {{ inputData }}</p>
+  <ng-content *ngTemplateOutlet="projectedTemplate"></ng-content>
+  <!--It is a directive that is used to render a template reference-->
+  <h4>Methods triggered:</h4>
+  <button type="button" (click)="showHookMessages()">{{buttonName}}</button>
+  <br><br>
+ <div *ngIf="showMessages">
+  @for (hookMessage of hookMessages; track hookMessage;let i=$index) {
+    <p>{{ hookMessage }}</p>
+  }
+ </div>
+ </div>
+
+

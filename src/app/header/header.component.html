@@ -1,16 +1,3 @@
-<!-- <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar> -->
 
 <div class="example-container" [class.example-is-mobile]="isMobile()">
   <mat-toolbar class="angular-toolbar">
@@ -18,6 +5,7 @@
       <mat-icon style="color: white;">menu</mat-icon>
     </button>
     <h1 class="angular-app-name"> App Menu</h1>
+    <h2 class="angular">&commat;Angular18</h2>
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -39,6 +27,7 @@
         >
         <a mat-list-item routerLink="/routing">Routing</a>
         <a mat-list-item routerLink="/forms">Forms</a>
+        <a mat-list-item routerLink="/pipes-directiives-di">Pipes, Directives & DI</a>
         <a mat-list-item routerLink="/lifecycle-hooks">Lifecycle Hooks</a>
         <a mat-list-item routerLink="/observables">Observables</a>
         <a mat-list-item routerLink="/api-communication">API-Communication</a>

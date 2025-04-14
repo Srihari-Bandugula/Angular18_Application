@@ -22,6 +22,7 @@ import { HomeComponent as FormsHomeComponent } from './in_app_components/Forms/a
 import { TemplateDrivenFormComponent } from './in_app_components/Forms/app/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './in_app_components/Forms/app/reactive-form/reactive-form.component';
 import { APICommunicationComponent } from './in_app_components/api-communication/api-communication.component';
+import { AppComponent as PipeDirectiveDIComponent } from './in_app_components/Pipes_Directives_DI/app/app.component';
 
 
 export const routes: Routes = [
@@ -94,6 +95,9 @@ export const routes: Routes = [
                 path:'reactive-forms',component:ReactiveFormComponent
             }
         ]
+    },
+    {
+        path:'pipes-directiives-di',component:PipeDirectiveDIComponent
     },
     {
         path:'lifecycle-hooks',component:LifeCycleHookComponent

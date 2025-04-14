@@ -1,0 +1,15 @@
+<h1>Pipes, Directives & DI Application</h1>
+<div>
+  <h2>📦 Product Inventory</h2>
+<ul>
+  <li *ngFor="let p of products" 
+      [appOutOfStock]="!p.inStock"
+      [ngClass]="{ 'text-green': p.inStock, 'text-red': !p.inStock }">
+    <strong>{{ p.name | titleCase }}</strong><br />
+    💰 {{ p.price | currency }} <br />
+    📅 Added on: {{ p.addedOn | date:'shortDate' }} <br />
+    ✅ Status: {{ p.inStock ? 'In Stock' : 'Out of Stock' }}
+  </li>
+</ul>
+
+</div>

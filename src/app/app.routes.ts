@@ -23,6 +23,7 @@ import { TemplateDrivenFormComponent } from './in_app_components/Forms/app/templ
 import { ReactiveFormComponent } from './in_app_components/Forms/app/reactive-form/reactive-form.component';
 import { APICommunicationComponent } from './in_app_components/api-communication/api-communication.component';
 import { AppComponent as PipeDirectiveDIComponent } from './in_app_components/Pipes_Directives_DI/app/app.component';
+import { AppComponent as AgGridComponent } from './in_app_components/Ag-Grid/app/app.component';
 
 
 export const routes: Routes = [
@@ -107,6 +108,9 @@ export const routes: Routes = [
     },
     {
         path:'api-communication',component:APICommunicationComponent
+    },
+    {
+        path:'ag-grid',component:AgGridComponent
     }
 
 ];

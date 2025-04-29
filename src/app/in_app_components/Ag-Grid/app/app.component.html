@@ -1,0 +1,16 @@
+<h1 class="heading">AG-GRID</h1>
+<ag-grid-angular 
+class="table"
+[columnDefs]="columnData"
+[rowData]="rowData"
+[pagination]="pagination"
+[paginationPageSize]="paginationPageSize"
+[paginationPageSizeSelector]="paginationPageSizeSelector"
+[defaultColDef]="defaultColDef"
+(cellValueChanged)="onCellValueChanged($event)"
+[rowSelection]="rowSelection"
+
+
+>
+    
+</ag-grid-angular>

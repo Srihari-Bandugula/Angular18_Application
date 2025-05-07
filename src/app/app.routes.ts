@@ -31,9 +31,6 @@ export const routes: Routes = [
         path: '', component:HomeComponent
     },
     {
-        path:'not',component:NotFoundComponent
-    },
-    {
         path:'components',component:ComponentComponent
     },
     {
@@ -111,6 +108,9 @@ export const routes: Routes = [
     },
     {
         path:'ag-grid',component:AgGridComponent
+    },
+    {
+        path:'**',component:NotFoundComponent
     }
 
 ];
